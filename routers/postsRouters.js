@@ -5,19 +5,19 @@ const router = express.Router();
 const posts = require('../data/postsData'); 
 
 // importo le funzioni dal controllers 
-const controlers = require('../controllers/postsControllers.js')
+const controllers = require('../controllers/postsControllers.js');
 
 // index leggo i dati del posts
-router.get('/', controlers.index);
+router.get('/', controllers.index);
 
 // show leggo solo un elemento in base al suo id 
-router.get('/:id', controlers.show); 
+router.get('/:id', controllers.show); 
     
 // store creazione di un elemento 
-router.post('/', controlers.store)
+router.post('/', controllers.store)
 
 // put modifica integrale 
-router.put('/:id', controlers.update)
+router.put('/:id', controllers.update)
 
 // // modify modifica del elemento 
 // router.patch('/:id', (req, res)=>{
@@ -25,7 +25,7 @@ router.put('/:id', controlers.update)
 // });
 
 // delete eliminazione del elemento
-router.delete('/:id', controlers.destroy)
+router.delete('/:id', controllers.destroy)
 
 // esporto le rotte 
 module.exports = router
