@@ -1,0 +1,29 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "crud",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "watch": "node --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GheorgheMadan/express-blog-api-crud.git"
+  },
+  "keywords": [
+    "controllers",
+    "data",
+    "routers"
+  ],
+  "author": "Gheorghe Madan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GheorgheMadan/express-blog-api-crud/issues"
+  },
+  "homepage": "https://github.com/GheorgheMadan/express-blog-api-crud#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
