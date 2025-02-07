@@ -69,7 +69,34 @@ function show(req, res) {
 
 // FUNZIONE STORE aggiunge un nuovo post
 function post(req, res){
-    res.send('creazione di un nuovo post')
+    // res.send('creazione di un nuovo post')
+    // trovo l'ultimo post 
+    const ultimoPost = posts[posts.length - 1];
+    
+    // trovo l'id dell'ultimo post
+    const idUltimoPost = ultimoPost.id;
+
+    // creo un nuovo id incrementando l'ultimo id
+    const nuovoID = idUltimoPost + 1;
+
+    // creo un nuovo post 
+    const nuovoPost = {
+        id: nuovoID,
+        title: req.body.title,
+        content: req.body.content,
+        image: req.body.image,
+        tags: req.body.tags
+    };
+
+    // inserisco il nuovo oggetto nei posts
+    posts.push(nuovoPost);
+
+    // controllo in console il cambiamento
+    console.log(posts);
+
+    // resetto lo status corretto per il post creato 
+    res.status(201);
+    res.json(nuovoPost)   
 };
     
 // esportiamo tutto
