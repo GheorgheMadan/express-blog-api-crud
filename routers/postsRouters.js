@@ -19,5 +19,8 @@ router.post('/', controllers.post)
 // update modifica interamente l'elemento
 router.put('/:id', controllers.putUpdate)
 
+// modify modifica dei post
+router.patch('/:id', controllers.patch) 
+
 // esporto le rotte 
 module.exports = router
