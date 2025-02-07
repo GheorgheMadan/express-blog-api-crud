@@ -1,9 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-// importo i dati dei posts 
-const posts = require('../data/postsData'); 
-
 // importo le funzioni dal controllers 
 const controllers = require('../controllers/postsControllers.js');
 
@@ -15,6 +12,9 @@ router.get('/:id', controllers.show);
     
 // delete eliminazione del elemento
 router.delete('/:id', controllers.destroy)
+
+// store aggiunta di un nuovo elemento 
+router.post('/', controllers.post)
 
 // esporto le rotte 
 module.exports = router

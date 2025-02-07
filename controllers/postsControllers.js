@@ -33,7 +33,7 @@ function show(req, res) {
     res.json(post);
 }
 
-// funzione delete che eliminerà un singolo post dalla lista 
+// FUNZIONE DELETE che eliminerà un singolo post dalla lista 
     function destroy(req, res) {
         // Converto il parametro ID in un numero intero 
         const id = parseInt(req.params.id);
@@ -66,5 +66,11 @@ function show(req, res) {
         
     };
 
+
+// FUNZIONE STORE aggiunge un nuovo post
+function post(req, res){
+    res.send('creazione di un nuovo post')
+};
+    
 // esportiamo tutto
-module.exports = { index, show, destroy }
+module.exports = { index, show, destroy, post }
