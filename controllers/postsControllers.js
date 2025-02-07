@@ -98,6 +98,41 @@ function post(req, res){
     res.status(201);
     res.json(nuovoPost)   
 };
+
+
+// FUNZIONE PUT, UPDATE DEL NOSTRO ELEMENTO 
+function putUpdate(req, res){
+    // res.send('qui modifichi il tuo post');
+
+    // trasformo il parametro ID in un numero 
+    const id = parseInt(req.params.id)
+
+    // con find cerco l'oggetto 
+    const post = posts.find(post => post.id === id)
     
+    // do una risposta negativa se il parametro id non esiste 
+    if(!post){
+
+        res.status(404)
+
+        return res.json({
+            error:'Not Found',
+            message: 'post inesistente'
+        })
+    }
+
+    // aggiorniamo la pizza
+    post.title = req.body.title
+    post.content = req.body.content
+    post.image = req.body.image
+    post.tags = req.body.tags
+
+    // controllo i posts 
+    console.log(posts);
+    
+    // restituiamo il post aggiornato
+    res.json(post)
+
+}   
 // esportiamo tutto
-module.exports = { index, show, destroy, post }
+module.exports = { index, show, destroy, post, putUpdate }

@@ -16,5 +16,8 @@ router.delete('/:id', controllers.destroy)
 // store aggiunta di un nuovo elemento 
 router.post('/', controllers.post)
 
+// update modifica interamente l'elemento
+router.put('/:id', controllers.putUpdate)
+
 // esporto le rotte 
 module.exports = router
