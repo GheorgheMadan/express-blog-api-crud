@@ -3,9 +3,16 @@ const posts = require('../data/postsData.js');
 
 // FUNZIONE CHE CONTIENE UN FILTRO QUESOTO MOSTRA SOLO I POST CHE HANNO UN DETERMINATO TAG 
     function index(req, res) {
+        // simulo un ERRORE 
+        CiaoSonoUnErrore
+        // Assegna a filteredPosts l'intero array di post, prima di applicare eventuali filtri
         let filteredPosts = posts
-        if(req.query.tag){
-           filteredPosts = posts.filter(post => post.tags.includes(req.query.tag)) 
+
+        // Controlla se nella query string è presente il parametro "tags"
+        if(req.query.tags){
+            // Se c'è un parametro "tags", filtra i post che contengono il tag specificato
+            // Uso il metodo "filter" per selezionare solo i post che hanno il tag presente nella query
+           filteredPosts = posts.filter(post => post.tags.includes(req.query.tags)) 
         };
         res.json(filteredPosts);
     }

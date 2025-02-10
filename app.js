@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+// importo il MIDDLEWARE
+const errorHandler = require('./Middlewares/errorHandler')
+
 // definisco la cartella dei file statici
 app.use(express.static('public'));
 
@@ -17,7 +20,10 @@ app.get('/', (req, res)=>{
 const postsRouters = require('./routers/postsRouters');
 
 // definisco la rotta dei post 
-app.use('/posts', postsRouters);
+app.use('/posts', postsRouters,);
+
+// autorizzo il middleware 
+app.use(errorHandler);
 
 // definisco il port 
 app.listen(port, ()=>{
